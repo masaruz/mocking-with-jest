@@ -8,6 +8,7 @@
   "node_js": 7,
   "script": [
     "yarn install",
+    "yarn test",
     "yarn build"
   ],
   "group": "stable",
