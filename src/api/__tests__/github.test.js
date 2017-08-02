@@ -10,7 +10,7 @@ const github = require('../github')
 // A simple example test
 describe('#getUser() using Promises', () => {
   it('should load user data', async () => {
-    const data = await github.getUser('vnglsts')
+    const data = await github.getUser('vnglst')
     expect(data).toBeDefined()
     expect(data.entity.name).toEqual('Koen van Gilst')
   })
