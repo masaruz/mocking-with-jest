@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getUserSuccess, getUserFailure } from '../actions'
-import { getUser } from '../api/github'
+import { tryGetUser } from '../actions'
 import '../css/User.css'
 
 const renderLine = (user, key) => <li key={key}><b>{key}</b>: {user[key]}</li>
 
 class User extends Component {
   componentDidMount () {
-    const { get } = this.props
-    get('vnglst')
+    this.props.tryGetUser('vnglst')
   }
   
   render () {
@@ -35,13 +33,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    get: async id => {
-      try {
-        const user = await getUser(id)
-        dispatch(getUserSuccess(user.entity))
-      } catch (ee) {
-        dispatch(getUserFailure())
-      }
+    tryGetUser: (id) => {
+      dispatch(tryGetUser(id))
     }
   }
 }

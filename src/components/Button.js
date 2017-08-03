@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class Button extends Component {
   onClick () {
-    throw new Error('BAAMMMMMMMM BAAMMMMMMMMM !!')
+    console.log('hello')
   }
   render () {
     return (
