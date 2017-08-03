@@ -17,3 +17,9 @@ after_success:
   - firebase use --token ${FIREBASE_TOKEN} # set firebase token
   - firebase use --add ${PROJECT_ID} # set current project
   - firebase deploy --non-interactive --token "${FIREBASE_TOKEN}" # deploy project
+notifications:
+  webhooks:
+    urls:
+      - https://api.ghostinspector.com/v1/suites/5981a3d3ed42cd3010099683/execute/?apiKey=a9baa3187c5bbae79b492d3e60bc2ca9068f2cba
+    on_success: always
+    on_failure: never
