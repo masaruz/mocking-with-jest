@@ -11,7 +11,7 @@ class User extends Component {
     const { get } = this.props
     get('vnglst')
   }
-
+  
   render () {
     const { user } = this.props
     return (
