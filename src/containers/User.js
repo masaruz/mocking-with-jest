@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getUserSuccess, getUserFailure } from '../actions'
 import { getUser } from '../api/github'
+import '../css/User.css'
 
 const renderLine = (user, key) => <li key={key}><b>{key}</b>: {user[key]}</li>
 
