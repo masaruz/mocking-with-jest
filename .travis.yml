@@ -1,26 +1,25 @@
 cache:
   directories:
-  - node_modules # cache node_module
-language: node_js # set language to node_js
-node_js:
-  7 # use node version 7
+  - node_modules
+language: node_js
+node_js: 7
 branches:
-  only: 
-  - master # auto build and deploy in only master branch
-script: # run after installed
-  - yarn install # install node module
-  - yarn test
-  - yarn build # build project
-install:
-  yarn global add firebase-tools # install firebase-cli
+  only:
+  - master
+script:
+- yarn install
+- yarn test
+- yarn build
+install: yarn global add firebase-tools
 after_success:
-  - firebase use --token ${FIREBASE_TOKEN} # set firebase token
-  - firebase use --add ${PROJECT_ID} # set current project
-  - firebase deploy --non-interactive --token "${FIREBASE_TOKEN}" # deploy project
+- firebase use --token ${FIREBASE_TOKEN}
+- firebase use --add ${PROJECT_ID}
+- firebase deploy --non-interactive --token "${FIREBASE_TOKEN}"
 notifications:
   webhooks:
     urls:
-      - https://api.ghostinspector.com/v1/suites/5981a3d3ed42cd3010099697/execute/?apiKey=a9baa3187c5bbae79b492d3e60bc2ca9068f2cba
+    - https://api.ghostinspector.com/v1/suites/5981a3d3ed42cd3010099697/execute/?apiKey=a9baa3187c5bbae79b492d3e60bc2ca9068f2cba
     on_success: always
     on_failure: never
-  slack: metromerce:${SLACK_TOKEN}
+  slack:
+    secure: GlTsZElJkQDkFKFO62nUQhZzi51AfjBpBUySqKz1FWUCwlbhu4Kd6Kk0j3UUcbF6iXURmB+f4tNLb0dhGmocnXKYw35Lx4clpw93K36OkYCEdYCaC76Fo8nHjcOspmwwc9wRYbbkRgvVoGA2TGapTtS+5/iLWDQAiT8sy5SmwfP9gXJfFi5KQATeEgsm6PYOf12odszWk/2Q9S67qMt70BShqzThl2gEF52LKG0qcm3VRq9ndZgzApHctEFb9pbXJfqlphKAad2/ZGPnqhuqvD6MTMUG1HWwE4JxAc5kUpYJUDbiw5Jm8MIJY+VzKPs71RT5h8c7mkOAz7bl6L9OYF/778mF+eFU9ICtEB0+hz+iyoaepYeocunQNhJZcc5ik0iDU5/huI50Ba9xN88uN60IMBdgbImxvY9gMed0zLmrUlwcmumzl3Tbogy36Fs7u67LE/9QM9mW5HhtsPbFSR3MD5HZYvoX4aaQEsnH7WF0fsWm44Mhm6SzDxxn2EDwbuzhhEMDUkLoO3N0KXYjqCpvpo3MNleWt6NEgVYz5E/ODkRYc95UOkGfOBm156IJ926t6Wox4CmAjXD7N1wqevzbKq0kVJP8rtG5NLkLCf1WuONyBJIek/of9M7GuKctTufqT/GgyjqUDXErDjLxFs92YWAdT8/U/4EQ2yG0Wjs=
