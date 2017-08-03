@@ -8,7 +8,6 @@ class App extends Component {
       <div>
         <User />
         <center><Button /></center>
-        <center><Button /></center>
       </div>
     )
   }
