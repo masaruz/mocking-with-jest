@@ -23,3 +23,4 @@ notifications:
       - https://api.ghostinspector.com/v1/suites/5981a3d3ed42cd3010099697/execute/?apiKey=a9baa3187c5bbae79b492d3e60bc2ca9068f2cba
     on_success: always
     on_failure: never
+  slack: metromerce:${SLACK_TOKEN}
