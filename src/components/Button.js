@@ -1,14 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Button extends Component {
-  onClick () {
-    console.log('hello')
-  }
-  render () {
-    return (
-      <button onClick={this.onClick}>BAAMMMMMM !!</button>
-    )
-  }
+const onClick = () => {
+  console.log('hello')
 }
 
-export default Button
+export default () => (
+  <button onClick={onClick}>BAAMMMMMM !!</button>
+)

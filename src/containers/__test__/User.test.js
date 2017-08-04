@@ -1,17 +1,5 @@
-import thunk from 'redux-thunk'
-import reducer from '../../reducers'
-
-const create = () => {
-  const store = {
-    getState: jest.fn(() => ({})),
-    dispatch: jest.fn(),
-  };
-  const next = jest.fn()
-
-  const invoke = action => thunk(store)(next)(action)
-
-  return {store, next, invoke}
-}
+import reducer from '../../reducers/userReducer'
+import create from '../__mocks__/create'
 
 it(`passes through non-function action`, () => {
   const { next, invoke } = create()
@@ -22,8 +10,6 @@ it(`passes through non-function action`, () => {
 
 describe('todos reducer', () => {
   it('should return the initial state', () => {
-    expect(reducer(undefined, {})).toEqual({
-      user: {}
-    })
+    expect(reducer(undefined, {})).toEqual({})
   })
 })

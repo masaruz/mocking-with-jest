@@ -1,29 +1,6 @@
-import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { tryGetUser } from '../actions'
-import '../css/User.css'
-
-const renderLine = (user, key) => <li key={key}><b>{key}</b>: {user[key]}</li>
-
-class User extends Component {
-  componentDidMount () {
-    this.props.tryGetUser('vnglst')
-  }
-  
-  render () {
-    const { user } = this.props
-    return (
-      <div className='User'>
-        <ul style={{ listStyle: 'none' }}>
-          {
-            // Loop over the object keys and render each key
-            Object.keys(user).map(key => renderLine(user, key))
-          }
-        </ul>
-      </div>
-    )
-  }
-}
+import UserTable from '../components/UserTable'
 
 const mapStateToProps = state => {
   return {
@@ -33,10 +10,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    tryGetUser: (id) => {
-      dispatch(tryGetUser(id))
+    tryGetUser: () => {
+      dispatch(tryGetUser('vnglst'))
     }
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(User)
+export default connect(mapStateToProps, mapDispatchToProps)(UserTable)
