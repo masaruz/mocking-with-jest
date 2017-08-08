@@ -1,5 +1,5 @@
-import reducer from '../../reducers/textReducer'
-import { actionType, setText, typeText } from '../../actions'
+import reducer from 'reducers/textReducer'
+import { actionType, setText, typeText } from 'actions'
 
 describe('text reducer', () => {
   it('should set state every typing', () => {

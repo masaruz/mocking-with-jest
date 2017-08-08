@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom'
 /* eslint-env jest */
 
 // This commands loads the mocked request.js as defined in __mocks__/request.js
-jest.mock('../request')
+jest.mock('api/request')
 
-const github = require('../github')
+const github = require('api/github')
 
 // A simple example test
 describe('#getUser() using Promises', () => {

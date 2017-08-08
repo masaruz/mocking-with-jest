@@ -1,5 +1,5 @@
-import reducer from '../../reducers/userReducer'
-import create from '../__mocks__/create'
+import reducer from 'reducers/userReducer'
+import create from 'api/__mocks__/create'
 
 it(`passes through non-function action`, () => {
   const { next, invoke } = create()

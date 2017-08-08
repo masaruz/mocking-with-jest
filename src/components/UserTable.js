@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/User.css'
+import 'css/User.css'
 
 const renderLine = (user, key) => <li key={key}><b>{key}</b>: {user[key]}</li>
 

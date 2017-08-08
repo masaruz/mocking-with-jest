@@ -1,5 +1,5 @@
-import userReducer from '../userReducer'
-import { actionType } from '../../actions'
+import userReducer from 'reducers/userReducer'
+import { actionType } from 'actions'
 
 // A simple example test
 describe('#getUser()', () => {

@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-const request = (url) => new Promise((resolve, reject) => {
+const request = url => new Promise((resolve, reject) => {
   // Get userID from supplied url string
   const lastSlash = url.lastIndexOf('/')
   const userID = url.substring(lastSlash + 1)
